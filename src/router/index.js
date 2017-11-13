@@ -11,6 +11,10 @@ const History = resolve => require(['@/components/History'], resolve)
 const More = resolve => require(['@/components/More'], resolve)
 const Add = resolve => require(['@/components/Add'], resolve)
 const Bmi = resolve => require(['@/components/Bmi'], resolve)
+const Book = resolve => require(['@/components/Book'], resolve)
+const BookMine = resolve => require(['@/components/BookMine'], resolve)
+const BookList = resolve => require(['@/components/BookList'], resolve)
+const BookCount = resolve => require(['@/components/BookCount'], resolve)
 
 Vue.use(Router)
 
@@ -24,6 +28,24 @@ let routes = [
                 component: Main
             }
         ]
+    }, {
+        path: '/book',
+        component: Book,
+        children: [
+            {
+                path: '',
+                component: Main
+            }
+        ]
+    }, {
+        path: '/book/mine',
+        component: BookMine
+    }, {
+        path: '/book/list',
+        component: BookList
+    }, {
+        path: '/book/count',
+        component: BookCount
     }, {
         path: '/count',
         component: Count

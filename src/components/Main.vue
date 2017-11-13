@@ -52,7 +52,9 @@
                         isAdd: true,
                         icon: '/static/img/icon_eat.png'
                     }, {
-                        name: '运动',
+                        name: '藏书',
+                        desc: '图书管理、书单管理软件',
+                        url: '/book',
                         icon: '/static/img/icon_sport.png'
                     }, {
                         name: '阅读',

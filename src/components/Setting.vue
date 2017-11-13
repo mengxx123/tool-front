@@ -1,7 +1,7 @@
 <template>
     <div class="page page-home">
         <header class="page-header">
-            <mu-appbar title="关于我们">
+            <mu-appbar title="设置">
                 <mu-icon-button icon="arrow_back" slot="left" @click="$router.go(-1)" />
             </mu-appbar>
         </header>

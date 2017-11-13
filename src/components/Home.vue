@@ -3,6 +3,8 @@
         <header class="page-header">
             <mu-appbar title="云设工具">
                 <mu-icon-button icon="menu" slot="left" @click="toggle(true)"/>
+                <mu-icon-button icon="search" slot="right" @click="toggle(true)"/>
+                <!--<mu-text-field icon="search" class="appbar-search-field"  slot="right" hintText="请输入搜索内容"/>-->
                 <mu-icon-menu icon="more_vert" slot="right">
                     <mu-menu-item title="分享"/>
                 </mu-icon-menu>
@@ -11,14 +13,37 @@
         <main class="page-body">
             <router-view/>
         </main>
-        <ui-footer></ui-footer>
         <mu-drawer :open="open" :docked="docked" @close="toggle()">
+            <div class="drawer-header">
 
+            </div>
             <mu-list @itemClick="docked ? '' : toggle()">
-                <mu-list-item title="Menu Item 1"/>
-                <mu-list-item title="Menu Item 2"/>
-                <mu-list-item title="Menu Item 3"/>
-                <mu-list-item v-if="docked" @click.native="open = false" title="Close"/>
+                <mu-list-item title="全部工具">
+                    <mu-icon slot="left" value="list"/>
+                </mu-list-item>
+                <mu-list-item title="便民工具">
+                    <mu-icon slot="left" value="next_week"/>
+                </mu-list-item>
+                <mu-list-item title="学习工具">
+                    <mu-icon slot="left" value="label_outline"/>
+                </mu-list-item>
+                <mu-list-item title="开发者工具">
+                    <mu-icon slot="left" value="chrome_reader_mode"/>
+                </mu-list-item>
+                <mu-list-item title="添加分类">
+                    <mu-icon slot="left" value="add"/>
+                </mu-list-item>
+                <mu-list-item title="我的收藏">
+                    <mu-icon slot="left" value="chrome_reader_mode"/>
+                    <mu-badge content="1" slot="after"/>
+                </mu-list-item>
+                <mu-divider/>
+                <mu-list-item title="设置" to="/setting">
+                    <mu-icon slot="left" value="settings"/>
+                </mu-list-item>
+                <mu-list-item title="关于" to="/about">
+                    <mu-icon slot="left" value="info"/>
+                </mu-list-item>
             </mu-list>
         </mu-drawer>
         <mu-float-button icon="add" class="page-add" @click="add"/>

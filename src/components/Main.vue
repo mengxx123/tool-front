@@ -6,7 +6,19 @@
                     <!--<mu-card-header :title="app.name" subTitle="sub title">-->
                         <!--<mu-avatar src="/images/uicon.jpg" slot="avatar"/>-->
                     <!--</mu-card-header>-->
-                    <mu-card-title :title="app.name"/>
+                    <mu-icon-menu icon="more_vert" @change="handleChange"
+                                  :open="open"
+                                  :anchorOrigin="{vertical: 'top',horizontal: 'right'}"
+                                  :targetOrigin="{vertical: 'top',horizontal: 'right'}"
+                                  @open="handleOpen"
+                                  @close="handleClose"
+                                  menuClass="ui-menu-list"
+                                  :value="value">
+                        <mu-menu-item value="1" title="删除" leftIcon="remove_red_eye" />
+                        <mu-menu-item value="2" title="收藏" leftIcon="remove_red_eye" @click="collection(app)" />
+                    </mu-icon-menu>
+                    <mu-card-title :title="app.name"></mu-card-title>
+                    <mu-badge class="myadd" content="广告" v-if="app.isAdd" />
                     <mu-card-text>{{ app.desc }}</mu-card-text>
                     <mu-card-actions>
                         <mu-raised-button primary label="查看" @click="view(app)"/>
@@ -14,25 +26,7 @@
                 </mu-card>
             </li>
         </ul>
-        <mu-list>
-            <mu-sub-header>历史</mu-sub-header>
-            <mu-list-item :title="item.name" v-for="item in items">
-                <mu-avatar src="/images/avatar1.jpg" slot="leftAvatar"/>
-                <mu-icon value="delete" slot="right" @click="remove(item)"/>
-            </mu-list-item>
-        </mu-list>
-        <!--<div>-->
-            <!--<div>-->
-                <!--<span>{{ item.name }}</span>-->
-                <!--<span>时间：{{ time(item) }}</span>-->
-            <!--</div>-->
-        <!--</div>-->
-        <router-link to="/count"><h2>统计</h2></router-link>
-        <div>
-            <div v-for="item in counts">
-                {{ item.name }} ： {{ timeText(item.totalTime) }}
-            </div>
-        </div>
+        <mu-toast v-if="toastVisible" :message="toastMessgge" />
     </div>
 </template>
 
@@ -47,10 +41,15 @@
                         url: '/counter',
                         desc: '简单的 +1 计数器'
                     }, {
-                        name: '交通',
-                        icon: '/static/img/icon_traffic.png'
+                        name: 'BMI 计算器',
+                        icon: '/static/img/icon_traffic.png',
+                        url: '/bmi',
+                        desc: 'BMI 健康指数计算器'
                     }, {
-                        name: '用餐',
+                        name: '阿里云CES',
+                        desc: '双11五折起',
+                        url: '/bmi',
+                        isAdd: true,
                         icon: '/static/img/icon_eat.png'
                     }, {
                         name: '运动',
@@ -66,24 +65,6 @@
                         icon: '/static/img/icon_sleep.png'
                     }
                 ],
-                items: [
-                    {
-                        id: '1',
-                        name: '跑步',
-                        startTime: 1510381344285,
-                        endTime: 1510381944285
-                    }, {
-                        id: '2',
-                        name: '吃饭',
-                        startTime: 1510381344285,
-                        endTime: 1510381944285
-                    }, {
-                        id: '3',
-                        name: '吃饭',
-                        startTime: 1510381344285,
-                        endTime: 1510381944285
-                    }
-                ],
                 counts: [
                     {
                         name: '跑步',
@@ -94,13 +75,24 @@
                         totalTime: 8 * 60 * 1000,
                         percent: 70
                     }
-                ]
+                ],
+                toastVisible: false,
+                toastMessgge: '这是消息'
             }
         },
         mounted() {
             console.log(new Date().getTime())
         },
         methods: {
+            handleOpen() {
+
+            },
+            handleClose() {
+
+            },
+            collection(app) {
+
+            },
             view(app) {
                 this.$router.push(app.url)
             },

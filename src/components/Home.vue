@@ -27,7 +27,7 @@
                 <mu-list-item title="学习工具">
                     <mu-icon slot="left" value="label_outline"/>
                 </mu-list-item>
-                <mu-list-item title="开发者工具">
+                <mu-list-item title="开发者工具" to="/cat/develop">
                     <mu-icon slot="left" value="chrome_reader_mode"/>
                 </mu-list-item>
                 <mu-list-item title="添加分类">

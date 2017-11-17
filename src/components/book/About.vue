@@ -1,20 +1,17 @@
 <template>
-    <div class="page page-book">
+    <div class="page page-home">
         <header class="page-header">
-            <mu-appbar title="我">
-                <mu-icon-button icon="menu" slot="left" @click="$router.go(-1)" />
+            <mu-appbar title="关于">
+                <mu-icon-button icon="arrow_back" slot="left" @click="$router.go(-1)" />
             </mu-appbar>
         </header>
         <main class="page-body">
-            <div class="book-user-box">
-
-            </div>
             <mu-content-block>
-                <p>云设工具致力于开发工具类 App，方便提高用户日常生活的效率。如果你有需求，我们也可以为你开发工具类 App！</p>
-                <p>给我们发邮件：admin@yunser.com</p>
+                <p>云设藏书</p>
+                <p>版本：1.0.0</p>
             </mu-content-block>
+
         </main>
-        <ui-footer></ui-footer>
     </div>
 </template>
 

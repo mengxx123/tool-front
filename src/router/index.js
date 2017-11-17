@@ -11,10 +11,19 @@ const History = resolve => require(['@/components/History'], resolve)
 const More = resolve => require(['@/components/More'], resolve)
 const Add = resolve => require(['@/components/Add'], resolve)
 const Bmi = resolve => require(['@/components/Bmi'], resolve)
-const Book = resolve => require(['@/components/Book'], resolve)
-const BookMine = resolve => require(['@/components/BookMine'], resolve)
-const BookList = resolve => require(['@/components/BookList'], resolve)
-const BookCount = resolve => require(['@/components/BookCount'], resolve)
+// 书籍
+const Book = resolve => require(['@/components/Book/Book'], resolve)
+const BookMine = resolve => require(['@/components/Book/Mine'], resolve)
+const BookList = resolve => require(['@/components/Book/List'], resolve)
+const BookCount = resolve => require(['@/components/Book/Count'], resolve)
+const BookSetting = resolve => require(['@/components/Book/Setting'], resolve)
+const BookAbout = resolve => require(['@/components/Book/About'], resolve)
+const BookDetail = resolve => require(['@/components/Book/Detail'], resolve)
+const BookSearch = resolve => require(['@/components/Book/Search'], resolve)
+// TODO
+
+// 分类
+const Develop = resolve => require(['@/components/Develop'], resolve)
 
 Vue.use(Router)
 
@@ -47,6 +56,18 @@ let routes = [
         path: '/book/count',
         component: BookCount
     }, {
+        path: '/book/settings',
+        component: BookSetting
+    }, {
+        path: '/book/about',
+        component: BookAbout
+    }, {
+        path: '/book/search',
+        component: BookSearch
+    }, {
+        path: '/books/:id',
+        component: BookDetail
+    }, {
         path: '/count',
         component: Count
     }, {
@@ -70,6 +91,9 @@ let routes = [
     }, {
         path: '/setting',
         component: Setting
+    }, {
+        path: '/cat/develop',
+        component: Develop
     }
 ]
 

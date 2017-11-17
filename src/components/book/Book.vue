@@ -3,15 +3,24 @@
         <header class="page-header">
             <mu-appbar title="我的藏书">
                 <mu-icon-button icon="menu" slot="left" @click="toggle(true)"/>
-                <mu-icon-button icon="search" slot="right" @click="toggle(true)"/>
+                <mu-icon-button icon="search" slot="right" to="/book/search"/>
                 <!--<mu-text-field icon="search" class="appbar-search-field"  slot="right" hintText="请输入搜索内容"/>-->
                 <mu-icon-menu icon="more_vert" slot="right">
+                    <mu-menu-item title="切换视图"/>
                     <mu-menu-item title="分享"/>
                 </mu-icon-menu>
             </mu-appbar>
         </header>
         <main class="page-body">
-            <router-view/>
+            <ul class="book-list">
+                <li class="item" v-for="book in books">
+                    <mu-card class="my-card" @click.native="view(book)">
+                        <mu-card-title :title="book.name"></mu-card-title>
+                        <mu-badge class="myadd" content="广告" v-if="book.isAdd" />
+                        <mu-card-text>{{ book.desc }}</mu-card-text>
+                    </mu-card>
+                </li>
+            </ul>
         </main>
         <ui-footer></ui-footer>
         <mu-drawer :open="open" :docked="docked" @close="toggle()">
@@ -74,6 +83,21 @@
                         name: '呵呵'
                     }
                 ],
+                books: [
+                    {
+                        id: '1',
+                        name: '三体',
+                        icon: '/static/img/icon_sleep.png',
+                        url: '/counter',
+                        desc: '简单的 +1 计数器'
+                    }, {
+                        id: '2',
+                        name: '和时间做朋友',
+                        icon: '/static/img/icon_traffic.png',
+                        url: '/bmi',
+                        desc: 'BMI 健康指数计算器'
+                    }
+                ],
                 open: false,
                 docked: true
             }
@@ -82,6 +106,9 @@
             console.log(new Date().getTime())
         },
         methods: {
+            view(book) {
+                this.$router.push('/books/' + book.id)
+            },
             time(item) {
                 let startTime = new Date(item.startTime)
                 let endTime = new Date(item.endTime)

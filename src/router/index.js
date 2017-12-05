@@ -12,14 +12,14 @@ const More = resolve => require(['@/components/More'], resolve)
 const Add = resolve => require(['@/components/Add'], resolve)
 const Bmi = resolve => require(['@/components/Bmi'], resolve)
 // 书籍
-const Book = resolve => require(['@/components/Book/Book'], resolve)
-const BookMine = resolve => require(['@/components/Book/Mine'], resolve)
-const BookList = resolve => require(['@/components/Book/List'], resolve)
-const BookCount = resolve => require(['@/components/Book/Count'], resolve)
-const BookSetting = resolve => require(['@/components/Book/Setting'], resolve)
-const BookAbout = resolve => require(['@/components/Book/About'], resolve)
-const BookDetail = resolve => require(['@/components/Book/Detail'], resolve)
-const BookSearch = resolve => require(['@/components/Book/Search'], resolve)
+const Book = resolve => require(['@/components/book/Book'], resolve)
+const BookMine = resolve => require(['@/components/book/Mine'], resolve)
+const BookList = resolve => require(['@/components/book/List'], resolve)
+const BookCount = resolve => require(['@/components/book/Count'], resolve)
+const BookSetting = resolve => require(['@/components/book/Setting'], resolve)
+const BookAbout = resolve => require(['@/components/book/About'], resolve)
+const BookDetail = resolve => require(['@/components/book/Detail'], resolve)
+const BookSearch = resolve => require(['@/components/book/Search'], resolve)
 // TODO
 
 // 分类

@@ -6,6 +6,7 @@
                 <mu-icon-button icon="search" slot="right" @click="toggle(true)"/>
                 <!--<mu-text-field icon="search" class="appbar-search-field"  slot="right" hintText="请输入搜索内容"/>-->
                 <mu-icon-menu icon="more_vert" slot="right">
+                    <mu-menu-item title="旧版" href="http://tool.yunser.com" target="_blank"/>
                     <mu-menu-item title="分享"/>
                 </mu-icon-menu>
             </mu-appbar>

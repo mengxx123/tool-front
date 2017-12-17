@@ -18,8 +18,15 @@
                         <mu-menu-item value="2" title="收藏" leftIcon="remove_red_eye" @click="collection(app)" />
                     </mu-icon-menu>
                     <mu-card-title :title="app.name"></mu-card-title>
+
                     <mu-badge class="myadd" content="广告" v-if="app.isAdd" />
-                    <mu-card-text>{{ app.desc }}</mu-card-text>
+                    <img class="ic" :src="app.icon">
+                    <mu-card-text>
+                        {{ app.desc }}
+                        <div>
+                            <span class="badge" v-for="tag in app.tags">{{ tag }}</span>
+                        </div>
+                    </mu-card-text>
                     <mu-card-actions>
                         <mu-raised-button primary label="查看" @click="view(app)"/>
                     </mu-card-actions>
@@ -36,16 +43,47 @@
             return {
                 apps: [
                     {
+                        name: '在线骰子',
+                        icon: '/static/dice/app-rand.png',
+                        url: '/dice',
+                        desc: '',
+                        tags: ['便民']
+                    },
+                    {
                         name: '计数器',
                         icon: '/static/img/icon_sleep.png',
                         url: '/counter',
                         desc: '简单的 +1 计数器'
-                    }, {
+                    },
+                    {
                         name: 'BMI 计算器',
                         icon: '/static/img/icon_traffic.png',
                         url: '/bmi',
-                        desc: 'BMI 健康指数计算器'
-                    }, {
+                        desc: 'BMI 健康指数计算器',
+                        tags: ['便民', '健康']
+                    },
+                    {
+                        name: '标准三围计算器',
+                        icon: '/static/img/icon_traffic.png',
+                        url: '/bwh',
+                        desc: '',
+                        tags: ['便民', '健康']
+                    },
+                    {
+                        name: '最大心率计算器',
+                        icon: '/static/img/icon_traffic.png',
+                        url: '/heartrate',
+                        desc: '',
+                        tags: ['便民', '健康']
+                    },
+                    {
+                        name: '预产期计算器',
+                        icon: '/static/img/icon_traffic.png',
+                        url: '/birth',
+                        desc: '',
+                        tags: ['便民', '健康']
+                    },
+                    {
                         name: '阿里云CES',
                         desc: '双11五折起',
                         url: '/bmi',

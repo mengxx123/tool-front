@@ -14,6 +14,8 @@ Vue.use(ui)
 
 Vue.config.productionTip = false
 
+Vue.prototype.$ui = window.ui
+
 /* eslint-disable no-new */
 new Vue({
     el: '#app',

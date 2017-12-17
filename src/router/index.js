@@ -10,7 +10,11 @@ const Counter = resolve => require(['@/components/Counter'], resolve)
 const History = resolve => require(['@/components/History'], resolve)
 const More = resolve => require(['@/components/More'], resolve)
 const Add = resolve => require(['@/components/Add'], resolve)
+
 const Bmi = resolve => require(['@/components/Bmi'], resolve)
+const Bwh = resolve => require(['@/components/Bwh'], resolve)
+const Heartrate = resolve => require(['@/components/Heartrate'], resolve)
+const Birth = resolve => require(['@/components/Birth'], resolve)
 // 书籍
 const Book = resolve => require(['@/components/book/Book'], resolve)
 const BookMine = resolve => require(['@/components/book/Mine'], resolve)
@@ -20,12 +24,16 @@ const BookSetting = resolve => require(['@/components/book/Setting'], resolve)
 const BookAbout = resolve => require(['@/components/book/About'], resolve)
 const BookDetail = resolve => require(['@/components/book/Detail'], resolve)
 const BookSearch = resolve => require(['@/components/book/Search'], resolve)
-// TODO
+// 其他
+// 骰子
+const Dice = resolve => require(['@/components/Dice'], resolve)
 
 // 分类
 const Develop = resolve => require(['@/components/Develop'], resolve)
 
 Vue.use(Router)
+
+const APP_NAME = '云设'
 
 let routes = [
     {
@@ -85,19 +93,69 @@ let routes = [
     }, {
         path: '/add',
         component: Add
-    }, {
+    },
+    {
         path: '/bmi',
         component: Bmi
-    }, {
+    },
+    {
+        path: '/birth',
+        component: Birth,
+        meta: {
+            keywords: '预产日期计算器，预产期查询，预产期自测'
+        }
+    },
+    {
+        path: '/bwh',
+        component: Bwh
+    },
+    {
+        path: '/heartrate',
+        component: Heartrate
+    },
+    {
         path: '/setting',
         component: Setting
-    }, {
+    },
+    {
         path: '/cat/develop',
         component: Develop
+    },
+    {
+        path: '/dice',
+        component: Dice,
+        meta: {
+            title: '在线骰子'
+        }
     }
 ]
 
-export default new Router({
+function getTitle(title) {
+    if (title) {
+        return title
+    } else {
+        return APP_NAME
+    }
+}
+
+let router = new Router({
     mode: 'history',
-    routes: routes
+    routes: routes,
+    scrollBehavior (to, from, savedPosition) {
+        return {
+            x: 0,
+            y: 0
+        }
+    }
 })
+
+router.beforeEach((to, from, next) => {
+    if (to.meta && to.meta.title) {
+        document.title = getTitle(to.meta.title)
+    } else {
+        document.title = getTitle()
+    }
+    next()
+})
+
+export default router

@@ -1,0 +1,313 @@
+
+html,
+body,
+#app {
+    height: 100%;
+}
+.page {
+    height: 100%;
+}
+.page-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    //margin-bottom: 8px;
+}
+.page-body {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 16px;
+    overflow: auto;
+}
+.page-footer {
+
+}
+.page-nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+}
+.page-add {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+}
+.drawer-header {
+    height: 100px;
+}
+/**/
+.page-more {
+    background-color: #edeff0;
+    .setting-list {
+        background-color: #fff;
+    }
+}
+/**/
+.app-list {
+    display: flex;
+    flex-wrap: wrap;
+    .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+        position: relative;
+        width: 33.33px;
+        min-width: 300px;
+        max-width: 100%;
+        margin-right: 40px;
+        height: 200px;
+        margin-bottom: 16px;
+    }
+    .img {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 8px;
+    }
+    .ic {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        width: 40px;
+        height: 40px;
+    }
+    .my-card {
+        width: 100%;
+        height: 100%;
+    }
+    .mu-icon-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+    }
+    .myadd {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        z-index: 100;
+    }
+    .badge {
+        margin-right: 8px;
+    }
+}
+//.mu-popover {
+//    position: relative;
+//    top: 16px;
+//    right: 16px;
+//}
+.appbar-search-field{
+    color: #FFF;
+    margin-bottom: 0;
+    &.focus-state {
+        color: #FFF;
+    }
+    .mu-text-field-hint {
+        color: fade(#FFF, 54%);
+    }
+    .mu-text-field-input {
+        color: #FFF;
+    }
+    .mu-text-field-focus-line {
+        background-color: #FFF;
+    }
+}
+/**/
+
+body {
+    background-color: #f9f9f9;
+}
+.container {
+    max-width: 1200px;
+}
+/* 澶撮儴 */
+.layout-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+/**/
+.layout-body {
+    padding-top: 16px;
+    min-height: 640px;
+}
+
+/**/
+.link-box {
+    margin: 16px 0;
+}
+.link-box .link-list {
+    display: inline-block;
+}
+.link-box .link-item {
+    display: inline-block;
+    margin-right: 16px;
+    color: #666;
+}
+.link-box .link-item a {
+    color: #666;
+}
+.link-box .link-title {
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+
+
+/**/
+.tool-list {
+    overflow: hidden;
+}
+.tool-list li {
+    float: left;
+    width: 260px;
+    height: 96px;
+    padding: 8px;
+    margin-bottom: 16px;
+    margin-right: 8px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.tool-list li:hover {
+    border-color: #09c;
+}
+.tool-list li.active {
+    border: 1px solid #f00;
+}
+.tool-list li a {
+    color: #666;
+}
+.tool-list .img {
+    float: left;
+    width: 72px;
+    height: 72px;
+    margin-right: 16px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.tool-list .info {
+    float: left;
+}
+.tool-list .text {
+    font-size: 18px;
+    color: #000;
+}
+.tool-list .header {
+    overflow: hidden;
+}
+.tool-list .desc {
+    max-width: 150px;
+    margin-top: 8px;
+}
+
+/**/
+.big-title {
+    font-size: 30px;
+    margin:  16px 0;
+}
+
+/**/
+.layout-footer {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    padding: 24px 0;
+}
+.layout-footer .info {
+    display: inline-block;
+}
+.layout-footer .copyright a {
+    color: #666;
+}
+.layout-footer .logo-box {
+    display: inline-block;
+    margin-right: 32px;
+    vertical-align: top;
+}
+.layout-footer .bdsharebuttonbox {
+    float: right;
+    /*display: inline-block;*/
+}
+.layout-footer .meta-list {
+    margin-bottom: 16px;
+}
+.layout-footer .meta-list .meta-item {
+    display: inline-block;
+    margin-right: 16px;
+}
+.layout-footer .meta-list a {
+    color: #666;
+}
+/**/
+.article-box {
+    padding: 16px;
+    margin-bottom: 24px;
+    background-color: #fff;
+}
+
+/**/
+.friend-list {
+
+}
+.friend-list .friend-item {
+    display: inline-block;
+}
+.friend-list .friend-item img {
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+}
+.friend-list .link {
+    margin-right: 16px;
+    color: #555;
+}
+/**/
+#yun-tie-sdk-wrap {
+    margin-bottom: 24px;
+}
+
+/**/
+.tool-box {
+    max-width: 480px;
+    padding: 8px;
+    margin-bottom: 24px;
+    background-color: #aecbdc;
+    border-radius: 4px;
+}
+.tool-box .tool-box-header {
+    padding: 8px;
+}
+.tool-box .tool-box-title {
+    font-size: 20px;
+}
+.tool-box .tool-box-body {
+    background-color: #fff;
+    padding: 16px;
+}
+
+.tool-box .result {}
+.tool-box .result .result-title {
+    margin: 8px 0;
+    font-weight: bold;
+}
+.tool-box .result-list {}
+.tool-box .result-list li {
+    margin-bottom: 8px;
+}
+.tool-box .result-list .strong {
+    color: #f60;
+    font-weight: bold;
+}
+
+.tool-article {
+    padding: 16px;
+    margin-bottom: 24px;
+    background-color: #fff;
+    border: 1px solid #eee;
+}

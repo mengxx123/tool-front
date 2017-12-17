@@ -61,7 +61,7 @@
         data () {
             return {
                 open: false,
-                docked: true
+                docked: false
                 // 主题
 //                theme: 'light',
 //                themes: {

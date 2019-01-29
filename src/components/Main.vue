@@ -43,53 +43,6 @@
             return {
                 apps: [
                     {
-                        name: '在线骰子',
-                        icon: '/static/dice/app-rand.png',
-                        url: '/dice',
-                        desc: '',
-                        tags: ['便民']
-                    },
-                    {
-                        name: '计数器',
-                        icon: '/static/img/icon_sleep.png',
-                        url: '/counter',
-                        desc: '简单的 +1 计数器'
-                    },
-                    {
-                        name: 'BMI 计算器',
-                        icon: '/static/img/icon_traffic.png',
-                        url: '/bmi',
-                        desc: 'BMI 健康指数计算器',
-                        tags: ['便民', '健康']
-                    },
-                    {
-                        name: '标准三围计算器',
-                        icon: '/static/img/icon_traffic.png',
-                        url: '/bwh',
-                        desc: '',
-                        tags: ['便民', '健康']
-                    },
-                    {
-                        name: '最大心率计算器',
-                        icon: '/static/img/icon_traffic.png',
-                        url: '/heartrate',
-                        desc: '',
-                        tags: ['便民', '健康']
-                    },
-                    {
-                        name: '预产期计算器',
-                        icon: '/static/img/icon_traffic.png',
-                        url: '/birth',
-                        desc: '',
-                        tags: ['便民', '健康']
-                    },
-                    {
-                        name: '阿里云CES',
-                        desc: '双11五折起',
-                        url: '/bmi',
-                        isAdd: true,
-                        icon: '/static/img/icon_eat.png'
-                    }, {
                         name: '藏书',
                         desc: '图书管理、书单管理软件',
                         url: '/book',
